@@ -1,2 +1,1 @@
-# mathJS
-deep logical understanding of JavaScript mathematics
+# taller-javascript-math
