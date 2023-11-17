@@ -1,0 +1,11 @@
+{
+  "name": "jsgame",
+  "version": "1.0.0",
+  "description": "video game, made implementing JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Ruiz luisru693@gmail.com",
+  "license": "MIT"
+}

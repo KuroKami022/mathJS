@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taller de Matemáticas con JavaScript</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js- Bomb attack</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/d9eacc821b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Taller de Matemáticas con JavaScript</h1>
-  <p>
-    Aprende a trabajar con matemáticas usando código javaScript en
-    <a href="https://platzi.com/jsmath">platzi.com/jsmath</a>.
-  </p>
+    <div class="game-container display-none">
+        <div class="messages">
+            <div>
+                <span id="lives"></span>
+            </div>
+            <div>
+                 <span>⏰</span><span id="time"></span>
+            </div>
+            <div>
+                <span>Record: </span><span id="record"></span>
+            </div>
+        </div>
+        <canvas id="game"></canvas>
+        <div class="btns">
+            <button id="up" onclick= "move('ArrowUp')"><i class="fa-solid fa-arrow-up"></i></button>
+            <button id="left" onclick="move('ArrowLeft')"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="right" onclick="move('ArrowRight')"><i class="fa-solid fa-arrow-right"></i></button>
+            <button id="down" onclick="move('ArrowDown')"><i class="fa-solid fa-arrow-down"></i></button>
+        </div>
+    </div>
+    <div class="lobby">
+        <h1>Be the fastest solving the game.</h1>
+        <button class="button-start" onclick="startGame()">START!</button>
+        <h2>Records</h2>
+        <div class="table-grid">
+            <div>Position</div>
+            <div>Name</div>
+            <div>Country</div>
+            <div>Time</div>
+        </div>
+    </div>
+    <div class="loser display-none">
+        <h2>¡YOU lost!</h2>
+        <p>😫</p>
+        <button onclick="reload()">Try again!</button>
+    </div>
 
-  <ul>
-    <li>
-      <a href="./math.html">Fórmulas básicas</a>
-    </li>
-    <li>
-      <a href="./descuentos.html">Porcentajes y descuentos</a>
-    </li>
-    <li>
-      <a href="./platzimath.html">Estadística básica</a>
-    </li>
-    <li>
-      <a href="./salarios.html">Análisis salarial</a>
-    </li>
-  </ul>
-
-  <script src="./main.js"></script>
+    <div class="win display-none">
+        <h1>Congratulations, you won!</h1>
+        <p>🏆</p>
+        <h2>Beat your own record!</h2>
+        <label>Nombre:
+            <input type="text" id="name">
+        </label>
+        <label>Country:
+            <input type="text" id="country">
+        </label>
+        <p id="resultGame"></p>
+        <button id="buttonTime" onclick="postTime()">Beat your own best time!</button>
+    </div>
+    <script src="./maps.js"></script>
+    <script src="./game.js"></script>
 </body>
 </html>
